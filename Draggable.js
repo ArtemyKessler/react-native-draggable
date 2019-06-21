@@ -163,7 +163,7 @@ export default class Draggable extends Component {
     const { renderSize, renderShape, renderText, imageSource } = this.props;
     if (renderShape == "image") {
       return (
-        <View style={{ backgroundColor: "#0084D7" }}>
+        <View style={{ backgroundColor: "#0084D7", borderRadius: 200 }}>
           <Image
             style={[
               this._dragItemCss(renderSize, null, "image"),
