@@ -163,7 +163,7 @@ export default class Draggable extends Component {
     const { renderSize, renderShape, renderText, imageSource } = this.props;
     if (renderShape == "image") {
       return (
-        <View style={{ backgroundColor: "#0084D7", borderRadius: 200 }}>
+        <View style={styles.imageContainer}>
           <Image
             style={[
               this._dragItemCss(renderSize, null, "image"),
@@ -226,3 +226,16 @@ export default class Draggable extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  imageContainer: {
+    borderRadius: 200,
+    shadowColor: "#0084D7",
+    shadowOffset: { height: 40 },
+    shadowOpacity: 0.32,
+    shadowRadius: 27,
+    elevation: 10,
+    backgroundColor: "#0084D7",
+    borderRadius: 200
+  }
+});
