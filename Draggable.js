@@ -167,7 +167,7 @@ export default class Draggable extends Component {
           <Image
             style={[
               this._dragItemCss(renderSize, null, "image"),
-              { borderRadius: 200 }
+              { borderRadius: 200, resizeMode: "contain" }
             ]}
             source={imageSource}
           />
