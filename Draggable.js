@@ -1,8 +1,3 @@
-/**
- *	* https://github.com/tongyy/react-native-draggable
- *
- */
-
 import React, { Component } from "react";
 import {
   Platform,
@@ -139,6 +134,8 @@ export default class Draggable extends Component {
       };
     } else if (renderShape == "image") {
       return {
+        // left: renderSize * 0.3,
+        // top: renderSize * 0.3,
         width: renderSize,
         height: renderSize
       };
@@ -163,11 +160,22 @@ export default class Draggable extends Component {
     const { renderSize, renderShape, renderText, imageSource } = this.props;
     if (renderShape == "image") {
       return (
-        <View style={styles.imageContainer}>
+        <View
+          style={[
+            styles.imageContainer,
+            { width: renderSize * 1.05, height: renderSize * 1.05 }
+          ]}
+        >
           <Image
             style={[
-              this._dragItemCss(renderSize, null, "image"),
-              { borderRadius: 200, resizeMode: "contain" }
+              styles.img,
+              {
+                padding: renderSize * 0.3,
+                width: renderSize * 0.75,
+                height: renderSize * 0.75,
+                left: renderSize * 0.18,
+                top: renderSize * 0.18
+              }
             ]}
             source={imageSource}
           />
@@ -229,13 +237,20 @@ export default class Draggable extends Component {
 
 const styles = StyleSheet.create({
   imageContainer: {
-    borderRadius: 200,
+    borderRadius: 999,
+    width: 40,
+    height: 40,
     shadowColor: "#0084D7",
     shadowOffset: { height: 40 },
     shadowOpacity: 0.32,
     shadowRadius: 27,
     elevation: 10,
-    backgroundColor: "#0084D7",
-    borderRadius: 200
+    backgroundColor: "#0084D7"
+  },
+  img: {
+    position: "absolute",
+    width: 25,
+    height: 25,
+    resizeMode: "contain"
   }
 });
