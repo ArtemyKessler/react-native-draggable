@@ -173,8 +173,8 @@ export default class Draggable extends Component {
                 padding: renderSize * 0.3,
                 width: renderSize * 0.75,
                 height: renderSize * 0.75,
-                left: renderSize * 0.18,
-                top: renderSize * 0.18
+                left: renderSize * 0.16,
+                top: renderSize * 0.16
               }
             ]}
             source={imageSource}
