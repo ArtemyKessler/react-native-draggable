@@ -15,6 +15,7 @@ import SvgUri from "react-native-svg-uri";
 
 export default class Draggable extends Component {
   static propTypes = {
+    scaleFactor: PropTypes.number,
     renderText: PropTypes.string,
     renderShape: PropTypes.string,
     renderSize: PropTypes.number,
@@ -171,10 +172,10 @@ export default class Draggable extends Component {
               styles.img,
               {
                 padding: renderSize * 0.3,
-                width: renderSize * 0.75,
-                height: renderSize * 0.75,
-                left: renderSize * 0.16,
-                top: renderSize * 0.16
+                width: renderSize * 0.6,
+                height: renderSize * 0.6,
+                left: renderSize * 0.23,
+                top: renderSize * 0.23
               }
             ]}
             source={imageSource}
